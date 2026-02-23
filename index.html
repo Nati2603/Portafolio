@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!--uso de favicon: ícono página-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--iconos redes sociales reflejados en footer-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> <!--letra formato-->
 </head>
 <body>
     <header>
         <h1>Portafolio de Natalia</h1>
+            <figure>
+                <img id="logo" src="images/logo.png" alt="Logo portafolio"> <!--imagen del logo-->
+            </figure>
         <nav>
             <ul>
                 <li><a href="#presentacion">Presentación</a></li> <!--referencias-->
@@ -23,20 +29,20 @@
     </header>
     <main>
         <h2>
-            Bienvenidos a este portafolio
+            ¡Bienvenidos a este portafolio!
         </h2>
         <section id="presentacion"> <!--secciones-->
-            <div>PRESENTACIÓN</div>
+            <div class="subtitle">PRESENTACIÓN</div>
             <h4>Natalia Martínez Villegas</h4>
             <h5>Licenciada en Orientación de la Universidad de Costa Rica</h5>
-            <p>Apasionada por mi profesión, facilito procesos que fomentan el autoconocimiento, la toma de decisiones, el desarrollo del proyecto de vida y el descubrimiento del sentido personal y del contexto. Cuento con experiencia en los ámbitos vocacional-laboral, educativo y personal-social, trabajando con personas de todas las edades y perfiles.</p>
+            <p>Apasionada por mi profesión, facilito procesos que fomentan el autoconocimiento, la toma de decisiones, el desarrollo del proyecto de vida y el descubrimiento del sentido personal y del contexto.</p>
             <figure>
                 <img src="images/graducr.jpeg" alt="Graduación Universidad de Costa Rica"> <!--imagenes-->
                 <figcaption>Graduación 2020 Universidad de Costa Rica.</figcaption>
             </figure>
         </section>
         <section id="sobremi">
-            <div>SOBRE MÍ</div>
+            <div class="subtitle">SOBRE MÍ</div>
             <p>Graduada de Bachiller en la Universidad de Costa Rica en 2020 y con Licenciatura en 2023, cuento con experiencia trabajando con adolescentes en instituciones como el Colegio Claretiano y el Centro Educativo Niño Jesús de Belén. Actualmente laboro en el Liceo Rural Unión del Toro con el Ministerio de Educación Pública. Me apasiona comprender a las personas, escucharlas y acompañarlas de manera integral en su autoconocimiento, toma de decisiones, proyecto de vida y comprensión de su contexto. Disfruto trabajar en espacios donde las personas se sientan valoradas, seguras y apoyadas en su desarrollo personal.</p>
             <figure>
                 <img src="images/perfil3.jpeg" alt="En el Liceo Rural Unión del Toro"> <!--imagenes-->
@@ -44,32 +50,32 @@
             </figure>
         </section>
         <section id="habilidades">
-            <div>HABILIDADES</div>
+            <div class="subtitle">HABILIDADES</div>
 
             <h4>Habilidades técnicas</h4>
             <div class="habilidades-tecnicas">
                 <div class="habilidad">
-                    <i class="fa fa-desktop"></i>
+                    <i class="fa fa-desktop icon"></i>
                     <p>Computación básica</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-file-word-o"></i>
+                    <i class="fa fa-file-word-o icon"></i>
                     <p>Paquete Microsoft Office</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-envelope"></i>
+                    <i class="fa fa-envelope icon"></i>
                     <p>Outlook/Gmail</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-video-camera"></i>
+                    <i class="fa fa-video-camera icon"></i>
                     <p>Microsoft Teams/Zoom</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-database"></i>
+                    <i class="fa fa-database icon"></i>
                     <p>SQL</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-css3"></i>
+                    <i class="fa fa-css3 icon"></i>
                     <p>Java/Python/HTML/CSS</p>
                 </div>
             </div>
@@ -77,33 +83,33 @@
             <h4>Habilidades blandas</h4>
             <div class="habilidades-blandas">
                 <div class="habilidad">
-                    <i class="fa fa-users"></i>
+                    <i class="fa fa-users icon"></i>
                     <p>Trabajo en equipo</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-comment"></i>
+                    <i class="fa fa-comment icon"></i>
                     <p>Comunicación asertiva</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-lightbulb-o"></i>
+                    <i class="fa fa-lightbulb-o icon"></i>
                     <p>Proactividad</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-refresh"></i>
+                    <i class="fa fa-refresh icon"></i>
                     <p>Adaptabilidad</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-paint-brush"></i>
+                    <i class="fa fa-paint-brush icon"></i>
                     <p>Creatividad</p>
                 </div>
                 <div class="habilidad">
-                    <i class="fa fa-handshake-o"></i>
+                    <i class="fa fa-handshake-o icon"></i>
                     <p>Conciliación</p>
                 </div>
             </div>
         </section>
         <section id="proyectos">
-            <div>PROYECTOS</div>
+            <div class="subtitle">PROYECTOS</div>
             <article>
                 <h3>Proyecto vocacional</h3>
                 <p>Acompaño a los estudiantes en giras y actividades que los ayudan a explorar opciones profesionales y a construir un proyecto de vida más consciente y significativo.</p>
@@ -126,7 +132,7 @@
             </article>
             <article>
                 <h3>Proyecto Personal-Social</h3>
-                <p>Facilito el desarrollo de habilidades blandas como la empatía, la comunicación y la resolución de conflictos, promoviendo relaciones saludables y un crecimiento integral</p>
+                <p>Facilito el desarrollo de habilidades blandas como la empatía, la comunicación y la resolución de conflictos, promoviendo relaciones saludables y un crecimiento integral.</p>
                 <figure>
                     <img src="images/taller2.jpeg" alt="Taller resolución de conflictos"> <!--imagenes-->
                     <figcaption>Taller: Ven, solucionemos juntos.</figcaption>
@@ -134,15 +140,16 @@
             </article>
         </section>
         <section id="contacto">
-            <div>CONTACTO</div>
+            <div class="subtitle">CONTACTO</div>
             <p>Número de contacto: +506 86815830</p>
+            <p>Correo: nati.m.26366@gmail.com</p>
             <p>Redes Sociales: @NatiOrienta</p>
         </section>
     </main>
     <footer>
-        <i class="fa fa-facebook-official"></i> <!--íconos rs-->
-        <i class="fa fa-instagram"></i>
-        <i class="fa fa-whatsapp"></i>
+        <i class="fa fa-facebook-official icon"></i> <!--íconos rs-->
+        <i class="fa fa-instagram icon"></i>
+        <i class="fa fa-whatsapp icon"></i> <!--font awesome-->
         <h6>Copyright 2026</h6>
     </footer>
 </body>

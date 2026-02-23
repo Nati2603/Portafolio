@@ -1,3 +1,31 @@
 h1 {
-    color:coral;
+    color: #500;
+}
+.icon {
+    color:white
+}
+
+body {
+    background-image: linear-gradient(to right, #800a2d 0%, #fee140 100%); /*fondo en cssgradient.io*/
+    font-family: "Questrial", sans-serif; /*fuente en google font*/
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+#logo {
+    border: 3px solid #800a2d;
+}
+
+.subtitle {
+    color: rgb(220, 113, 113);
+}
+
+main img {
+    max-width: 50%;       /*ancho del contenedor*/
+    height: 350px;         /*proporción*/
+    border: 6px solid #bfa5a7; /*Borde del color*/
+    border-radius: 8px;   /*Bordes redondeados*/
+    display: block;       /*se comporte como bloque*/
+    margin: 10px auto;    /*Centra la imagen horizontalmente y da espacio*/
 }
