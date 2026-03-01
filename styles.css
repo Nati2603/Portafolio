@@ -1,9 +1,6 @@
 h1 {
     color: #500;
 }
-.icon {
-    color:white
-}
 
 body {
     background-image: linear-gradient(to right, #800a2d 0%, #fee140 100%); /*fondo en cssgradient.io*/
@@ -28,4 +25,74 @@ main img {
     border-radius: 8px;   /*Bordes redondeados*/
     display: block;       /*se comporte como bloque*/
     margin: 10px auto;    /*Centra la imagen horizontalmente y da espacio*/
+}
+nav {
+    display: flex; /*activar flexbox*/
+    justify-content: space-between; /*logo izq, menú der*/
+    align-items: center; /*centra vertical*/
+}
+
+.bloque-presentacion {
+    display: flex;
+    gap: 2rem; /*define el tamaño del espacio entre fil y col*/
+    margin: 3rem 0; /*rem= para diseños responsivos*/
+}
+#presentacion {
+    flex: 2;
+}
+#sobremi {
+    flex: 1;
+}
+.habilidades-tecnicas,
+.habilidades-blandas {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.habilidad {
+    display: flex;
+    flex-direction: column; /*icono arriba, texto abajo*/
+    align-items: center;
+    width: 120px;
+    text-align: center;
+}
+.habilidad .icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #6c63ff;
+}
+/*Hover suave*/
+.habilidad {
+    transition: transform 0.3s ease; /*toma cada habilidad, suave*/
+}
+.habilidad:hover {
+    transform: translateY(-5px); /*hace que el elemento se mueva*/
+}
+.proyectos-contenedor {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.proyecto-card {
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 1.5rem;
+    border-radius: 12px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.proyecto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25 px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 767px) { /*En desktop se mantiene, en pant peq se pone una debajo de otra*/
+    .proyectos-contenedor {
+        flex-direction: column;
+    }
+}
+.proyecto-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;  /*ajuste fino de imágenes, q no rompan layout*/
 }
