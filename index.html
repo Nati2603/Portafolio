@@ -13,10 +13,10 @@
 </head>
 <body>
     <header>
-        <h1>Portafolio de Natalia</h1>
-            <figure>
-                <img id="logo" src="images/logo.png" alt="Logo portafolio"> <!--imagen del logo-->
-            </figure>
+        <div class=" header-left">
+            <img id="logo" src="images/logo.png" alt="Logo portafolio"> <!--imagen del logo-->
+            <h1>NATALIA MARTÍNEZ VILLEGAS</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="#presentacion">Presentación</a></li> <!--referencias-->
@@ -24,6 +24,7 @@
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <button id="theme-toggle">🌙</button> <!--modo oscuro-->
             </ul>
         </nav>
     </header>
@@ -34,8 +35,7 @@
     <div class="bloque-presentacion">
         <section id="presentacion"> <!--secciones-->
             <div class="subtitle">PRESENTACIÓN</div>
-            <h4>Natalia Martínez Villegas</h4>
-            <h5>Licenciada en Orientación de la Universidad de Costa Rica</h5>
+            <h4>Licenciada en Orientación de la Universidad de Costa Rica</h4>
             <p>Apasionada por mi profesión, facilito procesos que fomentan el autoconocimiento, la toma de decisiones, el desarrollo del proyecto de vida y el descubrimiento del sentido personal y del contexto.</p>
             <figure>
                 <img src="images/graducr.jpeg" alt="Graduación Universidad de Costa Rica"> <!--imagenes-->
@@ -151,10 +151,14 @@
         </section>
     </main>
     <footer>
-        <i class="fa fa-facebook-official icon"></i> <!--íconos rs-->
-        <i class="fa fa-instagram icon"></i>
-        <i class="fa fa-whatsapp icon"></i> <!--font awesome-->
-        <h6>Copyright 2026</h6>
+        <div class="footer-redes">
+            <i class="fa fa-facebook-official icon"></i> <!--íconos rs-->
+            <i class="fa fa-instagram icon"></i>
+            <i class="fa fa-whatsapp icon"></i> <!--font awesome-->
+        </div>
+        <div class="footer-copy">
+            <h6>© Copyright 2026 Natalia Martínez Villegas</h6>
+        </div>
     </footer>
 </body>
 </html>
