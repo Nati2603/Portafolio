@@ -1,41 +1,49 @@
-/*Modo oscuro-claro*/
+/*Modo oscuro*/
 :root {
-    --bg-color: #ffffff;
-    --text-color: #222222;
-    --card-bg: #f2f2f2;
-    --accent-color: #fee140;
-}
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-article,
-.habilidad,
-section {
-  background-color: var(--card-bg);
-}
-body.dark {
-    --bg-color: #121212;
-    --text-color: #f5f5f5;
-    --card-bg: #1f1f1f;
-}
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-h1 {
-    color: #500;
+    --bg-gradient: linear-gradient(to right, #1a0008, #500);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --text-color: #ffffff;
+    --accent-color: lightcoral;
 }
 
+/* Fondo general y texto */
 body {
-    background-image: linear-gradient(to right, #800a2d 0%, #fee140 100%); /*fondo en cssgradient.io*/
-    font-family: "Questrial", sans-serif; /*fuente en google font*/
-    font-weight: 400;
-    font-style: normal;
-    color: white;
+    background-image: linear-gradient(to right, #800a2d 0%, #fee140 100%);;
+    color: var(--text-color);
+    font-family: "Questrial", sans-serif;
+    transition: background-image 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.03em;
+}
+
+section,
+article,
+.habilidad {
+    background-color: var(--card-bg);
+    transition: background-color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6, figcaption {    
+    color: var(--text-color);
+}
+
+p, li {
+    color: var(--text-color);
+}
+
+/*Modo claro*/
+body.light {
+    --bg-gradient: linear-gradient(to right, #fff1f2, #f8cdd2);
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --text-color: #500;
+    --accent-color: #500;
+}
+
+h1 {
+    color: #500;
 }
 
 #logo {
@@ -47,12 +55,14 @@ body {
 }
 
 main img {
-    max-width: 50%;       /*ancho del contenedor*/
-    height: 350px;         /*proporción*/
+    width: 100%;
+    max-width: 100%;       /*ancho del contenedor*/
+    height: auto;         /*proporción*/
     border: 6px solid #bfa5a7; /*Borde del color*/
     border-radius: 8px;   /*Bordes redondeados*/
     display: block;       /*se comporte como bloque*/
     margin: 10px auto;    /*Centra la imagen horizontalmente y da espacio*/
+    object-fit: cover;
 }
 nav {
     display: flex; /*activar flexbox*/
@@ -65,12 +75,10 @@ nav {
     gap: 2rem; /*define el tamaño del espacio entre fil y col*/
     margin: 3rem 0; /*rem= para diseños responsivos*/
 }
-#presentacion {
-    flex: 2;
-}
-#sobremi {
+#presentacion, #sobremi {
     flex: 1;
 }
+
 .habilidades-tecnicas,
 .habilidades-blandas {
     display: flex;
@@ -89,7 +97,7 @@ nav {
 .habilidad .icon {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    color: #6c63ff;
+    color: #800a2d;
 }
 footer {
     display: flex;
@@ -147,7 +155,7 @@ nav a:hover::after {
 }
 .proyecto-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 25 px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 /*Responsive*/
 @media (max-width: 767px) { /*En desktop se mantiene, en pant peq se pone una debajo de otra*/
@@ -155,7 +163,7 @@ nav a:hover::after {
         flex-direction: column;
     }
 }
-@media (max-width: 768pz) {
+@media (max-width: 768px) {
     header {
         flex-direction: column;
         gap: 1rem;
@@ -167,6 +175,45 @@ nav a:hover::after {
         gap: 1rem;
         text-align: center;
     }
+}
+/*Responsive tablet y móvil*/
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;    /*permite salto de línea */
+    align-items: center;
+  }
+
+  /*Logo, nombre*/
+  .header-left {
+    width: 100%;
+    justify-content: center; /* centra nombre y logo*/
+    margin-bottom: 0.5rem;
+  }
+
+  /* Menú alineado a la derecha*/
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /*menú a la derecha*/
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;  /*si no cabe, baja*/
+  }
+
+  /*Responsive secciones*/
+@media (max-width: 768px) {
+  .bloque-presentacion {
+    flex-direction: column;  /* una sección debajo de otra */
+  }
+}
+
+  /* Botón modo oscuro */
+  #toggleMode {
+    margin-left: auto;
+    margin-top: 0.5rem;
+  }
 }
 .proyecto-card img {
     max-width: 100%;
@@ -194,8 +241,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2 rem;
-    background-color: rgba(128- 10, 45, 0.95);
+    padding: 1rem 2rem;
+    background-color: rgba(128, 10, 45, 0.95);
     backdrop-filter: blur(6px);
 }
 /*Logo y texto centralizados*/
@@ -234,6 +281,12 @@ nav a {
 /*Scroll suave*/
 html {
     scroll-behavior: smooth;
+}
+@media (min-width: 1024px) {
+    #habilidades h4 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
 }
 
 
