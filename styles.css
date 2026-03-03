@@ -1,14 +1,14 @@
 /*Modo oscuro*/
 :root {
     --bg-gradient: linear-gradient(to right, #1a0008, #500);
-    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-bg: rgba(255, 255, 255, 0.18);
     --text-color: #ffffff;
     --accent-color: lightcoral;
 }
 
 /* Fondo general y texto */
 body {
-    background-image: linear-gradient(to right, #800a2d 0%, #fee140 100%);;
+    background-image: linear-gradient(to right, #800a2d 0%, #fee140 100%);
     color: var(--text-color);
     font-family: "Questrial", sans-serif;
     transition: background-image 0.4s ease, color 0.4s ease;
@@ -17,6 +17,14 @@ body {
 h1, h2, h3, h4, h5 {
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0.03em;
+}
+
+#presentacion {
+  min-height: 80vh;
+}
+
+header {
+  width: calc(100vw - 2rem);
 }
 
 section,
@@ -41,9 +49,19 @@ body.light {
     --text-color: #500;
     --accent-color: #500;
 }
-
-h1 {
-    color: #500;
+body.light {
+    background-image: linear-gradient(135deg, #fff7f8 0%, #fce4ec 50%, #f8bbd0 100%);
+}
+body.light header {
+    background: linear-gradient(to right, #f8bbd0, #fce4ec);
+}
+/*Texto del header en modo claro*/
+body.light header h1,
+body.light nav a {
+    color: #6a1b2b;
+}
+body.light footer {
+    background: linear-gradient(to right, #fce4ec, #f8bbd0);
 }
 
 #logo {
@@ -51,7 +69,8 @@ h1 {
 }
 
 .subtitle {
-    color: rgb(220, 113, 113);
+    color: #ffb6c1;
+    font-weight: 600;
 }
 
 main img {
@@ -61,7 +80,9 @@ main img {
     border: 6px solid #bfa5a7; /*Borde del color*/
     border-radius: 8px;   /*Bordes redondeados*/
     display: block;       /*se comporte como bloque*/
-    margin: 10px auto;    /*Centra la imagen horizontalmente y da espacio*/
+    margin: 1.5rem auto;    /*Centra la imagen horizontalmente y da espacio*/
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
     object-fit: cover;
 }
 nav {
@@ -136,7 +157,7 @@ nav a::after {
     width: 0;
     height: 2px;
     background-color: #fee140;
-    transition: width 0.3 ease;
+    transition: width 0.3s ease;
 }
 nav a:hover::after {
     width: 100%;
@@ -157,6 +178,21 @@ nav a:hover::after {
     transform: translateY(-6px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
+/*Hermano adyacente*/
+h3 + p {
+  margin-top: 0.5rem;
+}
+
+/*Selector de atributo*/
+a[href^="mailto"] {
+  font-weight: bold;
+}
+
+/*Pseudo-elemento*/
+p::first-line {
+  font-weight: 600;
+}
+
 /*Responsive*/
 @media (max-width: 767px) { /*En desktop se mantiene, en pant peq se pone una debajo de otra*/
     .proyectos-contenedor {
@@ -202,6 +238,13 @@ nav a:hover::after {
     flex-wrap: wrap;  /*si no cabe, baja*/
   }
 
+  /* Botón modo oscuro */
+  #toggleMode {
+    margin-left: auto;
+    margin-top: 0.5rem;
+  }
+}
+
   /*Responsive secciones*/
 @media (max-width: 768px) {
   .bloque-presentacion {
@@ -209,27 +252,12 @@ nav a:hover::after {
   }
 }
 
-  /* Botón modo oscuro */
-  #toggleMode {
-    margin-left: auto;
-    margin-top: 0.5rem;
-  }
-}
 .proyecto-card img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;  /*ajuste fino de imágenes, q no rompan layout*/
 }
-header {
-    position: sticky; /*se activa con scroll*/
-    top: 0; /*arriba del todo*/
-    z-index: 1000;
-}
-/*Fondo sólido*/
-header { 
-    background-color: rgba(128, 10, 45, 0.96);
-    backdrop-filter: blur(4px);
-}
+
 /*Separa contenido de header*/
 main {
     padding-top: 1rem;
@@ -289,4 +317,35 @@ html {
     }
 }
 
+/*Ajuste imágenes Presentación y Sobre mí en desktop*/
+@media (min-width: 1024px) {
+    #presentacion img,
+    #sobremi img {
+        max-width: 75%;
+        margin: 1rem auto;
+    }
+}
 
+/* Tablet - Mobile First */
+@media (min-width: 768px) {
+  .bloque-presentacion {
+    flex-direction: row;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .proyectos-contenedor {
+    flex-direction: row;
+  }
+}
+/* Desktop grande */
+@media (min-width: 1440px) {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  body {
+    font-size: 1.05rem;
+  }
+}
