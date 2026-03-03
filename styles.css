@@ -1,3 +1,8 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /*Modo oscuro*/
 :root {
     --bg-gradient: linear-gradient(to right, #1a0008, #500);
@@ -21,10 +26,6 @@ h1, h2, h3, h4, h5 {
 
 #presentacion {
   min-height: 80vh;
-}
-
-header {
-  width: calc(100vw - 2rem);
 }
 
 section,
@@ -85,6 +86,12 @@ main img {
     background-color: rgba(255, 255, 255, 0.3);
     object-fit: cover;
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 nav {
     display: flex; /*activar flexbox*/
     justify-content: space-between; /*logo izq, menú der*/
@@ -194,11 +201,17 @@ p::first-line {
 }
 
 /*Responsive*/
-@media (max-width: 767px) { /*En desktop se mantiene, en pant peq se pone una debajo de otra*/
-    .proyectos-contenedor {
-        flex-direction: column;
-    }
+@media (max-width: 768px) {
+  .proyectos-contenedor {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .proyecto-card {
+    width: 100%;
+  }
 }
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -249,6 +262,13 @@ p::first-line {
 @media (max-width: 768px) {
   .bloque-presentacion {
     flex-direction: column;  /* una sección debajo de otra */
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  #presentacion,
+  #sobremi {
+    width: 100%;
   }
 }
 
@@ -348,4 +368,13 @@ html {
   body {
     font-size: 1.05rem;
   }
+}
+
+header,
+main,
+section,
+article,
+footer {
+  max-width: 100%;
+  box-sizing: border-box;
 }
